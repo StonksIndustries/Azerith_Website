@@ -1,0 +1,80 @@
+@import "base";
+
+body {
+  .blur {
+    z-index: 0;
+    opacity: 0.9;
+    position: absolute;
+    min-width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #000 -30%, rgba(0, 0, 0, 0) 100%);
+  }
+  .view {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+  }
+}
+
+.nav {
+  @include flexbox($justify-content: space-between, $gap: 20px);
+  position: fixed;
+
+  display: none;
+
+  top: 0;
+  height: 100px;
+  width: 100%;
+  span {
+    @include flexbox($align-items: center, $gap: 10px);
+    img {
+      height: 100px;
+      filter: invert(1);
+    }
+    h2 {
+      font-size: 30px;
+      font-weight: 700;
+      margin: 0;
+      overflow: hidden;
+    }
+  }
+  ul {
+    @extend %nav-ul;
+  }
+}
+
+.first-view {
+  background-image: url("../img/bg.png");
+  @include flexbox(
+    column,
+    $align-items: center,
+    $justify-content: center,
+    $gap: 20px
+  );
+  .content {
+    @include flexbox(
+      column,
+      $align-items: center,
+      $justify-content: center,
+      $gap: 20px
+    );
+    height: 100vh;
+    img {
+      filter: invert(1);
+      height: 200px;
+    }
+    h1 {
+      font-size: 68px;
+      font-weight: 400;
+      margin: 0;
+    }
+    ul {
+      @extend %nav-ul;
+    }
+  }
+
+  svg {
+    filter: invert(1);
+  }
+}
