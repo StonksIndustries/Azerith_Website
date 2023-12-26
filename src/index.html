@@ -1,45 +1,77 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="js/index.js" type="module"></script>
-    <link rel="stylesheet" href="css/index.scss" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="nav">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <script src="js/index.js" type="module" defer></script>
+  <link rel="stylesheet" href="css/index.scss"/>
+
+  <title>Document</title>
+</head>
+<body>
+<div class="nav hide">
       <span>
-        <img src="img/logo.png" />
+        <img src="img/logo.png" alt="logo"/>
         <h2>Lands of Azerith</h2>
       </span>
-      <ul>
-        <li><button>About</button></li>
-        <li><button>Download</button></li>
-        <li><button>Contact</button></li>
-      </ul>
-    </div>
-    <div class="view first-view">
-      <div class="blur"></div>
-      <div class="content">
-        <img src="img/logo.png" alt="" />
-        <h1>Welcome to the Lands of Azerith</h1>
-        <ul>
-          <li><button>About</button></li>
-          <li><button>Download</button></li>
-          <li><button>Contact</button></li>
-        </ul>
-      </div>
+  <ul class="nav-ul">
+    <li>
+      <button>About</button>
+    </li>
+    <li>
+      <button>Download</button>
+    </li>
+    <li>
+      <button>Contact</button>
+    </li>
+  </ul>
+</div>
+<div class="view first-view">
+  <div class="content">
+    <img src="img/logo.png" alt=""/>
+    <h1>Welcome to the Lands of Azerith</h1>
+    <ul class="nav-ul">
+      <li>
+        <button>About</button>
+      </li>
+      <li>
+        <button>Download</button>
+      </li>
+      <li>
+        <button>Contact</button>
+      </li>
+    </ul>
+  </div>
 
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height="48"
-        viewBox="0 -960 960 960"
-        width="48"
-      >
-        <path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z" />
-      </svg>
-    </div>
-    <div class="view second-view"></div>
-  </body>
+  <img src="svg/down_arrow.svg" alt="Go Down">
+
+
+</div>
+<div class="view second-view">
+  <div class="content">
+    <img src="img/perso.png" alt="game character"/>
+    <p>Lands of Azerith est avant tout un jeu vidéo de rôle se déroulant dans le monde médiéval fantastique de
+      Azerith,
+      qui est contrôlé par un régime impérial. Le joueur aura le choix d'incarner plusieurs classes d'humains dans une
+      faction indépendantiste et aura comme but de combattre l'empire en place et de le renverser, dans un monde où de
+      nombreuses créatures malveillantes errent sans but dans la nuit.
+    </p>
+
+  </div>
+  <img src="svg/down_arrow.svg" alt="Go Down">
+</div>
+<div class="view third-view">
+  <div class="content">
+
+
+  </div>
+  <img src="svg/down_arrow.svg" alt="Go Down">
+</div>
+
+<!--TODO: Add blur to image and remove it from code-->
+<div class="first-view-blur"></div>
+<div class="second-view-blur"></div>
+<div class="third-view-blur"></div>
+</body>
 </html>

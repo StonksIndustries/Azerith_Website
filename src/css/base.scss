@@ -5,7 +5,7 @@ $font-serif: "Hina Mincho", serif;
 @mixin flexbox(
   $direction: row,
   $align-items: center,
-  $justify-content: center,
+  $justify-content: unset,
   $gap: 0
 ) {
   display: flex;
@@ -13,6 +13,23 @@ $font-serif: "Hina Mincho", serif;
   align-items: $align-items;
   justify-content: $justify-content;
   gap: $gap;
+}
+
+@mixin grid($columns: 1, $rows: 1, $align-items: center,
+  $justify-content: center, $gap: 0) {
+  display: grid;
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
+  align-items: $align-items;
+  justify-items: $justify-content;
+  gap: $gap;
+
+}
+
+
+@mixin size($width: 100%, $height: 100%) {
+  width: $width;
+  height: $height;
 }
 
 * {
@@ -30,14 +47,4 @@ body {
   display: none;
 }
 
-%nav-ul {
-  @include flexbox($gap: 80px);
-  padding: 0;
-  list-style: none;
-  button {
-    border: none;
-    background-color: transparent;
-    font-size: 42px;
-    cursor: pointer;
-  }
-}
+

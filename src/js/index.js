@@ -1,10 +1,16 @@
-import { $ } from "jquery";
-import { gsap } from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import $ from "jquery";
 
+document.addEventListener("scroll", function () {
+    if (window.scrollY / innerHeight > 0.7) {
+        $(".nav")[0].classList.remove("hide");
+    } else {
+        $(".nav")[0].classList.add("hide");
+    }
 
-gsap.registerPlugin(ScrollToPlugin);
-
-window.addEventListener("wheel", () => {
-//   gsap.to(window, { duration: 2, scrollTo: 1000 });
+    if (window.scrollY / innerHeight > 0.8) {
+        $(".nav")[0].classList.add("show");
+    } else {
+        $(".nav")[0].classList.remove("show");
+    }
 });
+
