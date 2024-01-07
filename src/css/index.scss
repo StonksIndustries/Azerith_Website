@@ -35,19 +35,12 @@
       font-size: 30px;
     }
   }
-
 }
 
 .nav-ul {
   display: flex;
   padding: 0;
   list-style: none;
-
-  button {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-  }
 
   button:after {
     content: "";
@@ -61,14 +54,15 @@
   }
 
   button:hover:after {
-    //width: 100%;
     transform: scaleX(1);
     transform-origin: bottom left;
   }
 }
 
 // TODO: Add blur to image and remove it from code
-.first-view-blur, .second-view-blur {
+.first-view-blur,
+.second-view-blur,
+.third-view-blur {
   @include size(100%, 100%);
   position: absolute;
   z-index: 0;
@@ -79,10 +73,14 @@
 .first-view-blur {
   top: 0;
 }
-
 .second-view-blur {
   top: 100vh;
 }
+.third-view-blur {
+  top: 200vh;
+}
+
+
 
 .view {
   min-height: 100vh;
@@ -90,7 +88,15 @@
   background-position: center;
   margin: 0;
   @include flexbox(column);
+}
 
+@keyframes zoomOut {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 .first-view {
@@ -119,9 +125,7 @@
         font-size: 42px;
       }
     }
-
   }
-
 }
 
 .second-view {

@@ -1,16 +1,50 @@
 import $ from "jquery";
 
-document.addEventListener("scroll", function () {
-    if (window.scrollY / innerHeight > 0.7) {
-        $(".nav")[0].classList.remove("hide");
-    } else {
-        $(".nav")[0].classList.add("hide");
-    }
+function fetchCurrentView() {
+  return (window.scrollY / innerHeight).toFixed(0);
+}
 
-    if (window.scrollY / innerHeight > 0.8) {
-        $(".nav")[0].classList.add("show");
-    } else {
-        $(".nav")[0].classList.remove("show");
-    }
+function scrollToDestination() {
+  scrollLock = true;
+  $("HTML, BODY").animate(
+    {
+      scrollTop: innerHeight * destination,
+    },
+    700
+  );
+  setTimeout(function () {
+    scrollLock = false;
+    console.log("Scrolled to " + destination);
+  }, 700);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  destination = fetchCurrentView();
+  scrollLock = false;
+  document.querySelectorAll("#scroll-down-button").forEach(function (element) {
+    element.addEventListener("click", function () {
+      if (!scrollLock) {
+        destination += 1;
+        scrollToDestination();
+      }
+    });
+  });
 });
 
+document.addEventListener("scroll", function () {
+  relativeScroll = window.scrollY / innerHeight;
+  if (relativeScroll > 0.7) {
+    $(".nav")[0].classList.remove("hide");
+  } else {
+    $(".nav")[0].classList.add("hide");
+  }
+  if (!scrollLock && fetchCurrentView() == destination) {
+    if (relativeScroll > destination + 0.01) {
+      destination += 1;
+      scrollToDestination();
+    } else if (relativeScroll < destination - 0.01) {
+      destination -= 1;
+      scrollToDestination();
+    }
+  }
+});

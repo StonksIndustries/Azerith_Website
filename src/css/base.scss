@@ -15,17 +15,20 @@ $font-serif: "Hina Mincho", serif;
   gap: $gap;
 }
 
-@mixin grid($columns: 1, $rows: 1, $align-items: center,
-  $justify-content: center, $gap: 0) {
+@mixin grid(
+  $columns: 1,
+  $rows: 1,
+  $align-items: center,
+  $justify-content: center,
+  $gap: 0
+) {
   display: grid;
   grid-template-columns: $columns;
   grid-template-rows: $rows;
   align-items: $align-items;
   justify-items: $justify-content;
   gap: $gap;
-
 }
-
 
 @mixin size($width: 100%, $height: 100%) {
   width: $width;
@@ -47,4 +50,19 @@ body {
   display: none;
 }
 
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
 
+#scroll-down-button {
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.2);
+  }
+  padding: 0;
+  height: 48px;
+  border: none;
+  background-color: transparent;
+}
