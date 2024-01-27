@@ -80,8 +80,6 @@
   top: 200vh;
 }
 
-
-
 .view {
   min-height: 100vh;
   background-size: cover;
@@ -100,8 +98,8 @@
 }
 
 .first-view {
-  background-image: url("../img/bg1.png");
-
+  background-image: url("../img/bg1.png?as=webp&height=1080&quality=60");
+  
   .content {
     @include flexbox(column, center, center, 20px);
     height: calc(100vh - 48px);
@@ -128,19 +126,47 @@
   }
 }
 
-.second-view {
-  background-image: url("../img/bg2.png");
+.second-view .content {
+  @include grid(40vw 40vw, calc(100vh - 148px), center, center, 40px);
+  margin-top: 100px;
 
-  .content {
-    @include grid(40vw 40vw, calc(100vh - 148px), center, center, 40px);
-    margin-top: 100px;
+  img {
+    max-width: 40vh;
+  }
 
+  p {
+    font-size: 30px;
+  }
+}
+
+.third-view .content {
+  @include grid(40vw 40vw, calc(100vh - 148px), center, center, 40px);
+  margin-top: 100px;
+
+  img {
+    color: white;
+    max-width: 40vh;
+  }
+
+  p {
+    font-size: 30px;
+  }
+
+  .dl-buttons {
+    @include flexbox(column, $gap: 10px);
+  }
+  #dl-main-button {
+    @include flexbox($gap: 4px);
+    font-size: 30px;
+    border: solid 2px white;
+    border-radius: 10px;
+    padding: 10px 17px;
+  }
+  #dl-other-toggle {
+    @include flexbox($align-items: flex-end, $gap: 4px);
+    font-size: 23px;
     img {
-      max-width: 40vh;
-    }
-
-    p {
-      font-size: 30px;
+      height: 1em;
     }
   }
 }
