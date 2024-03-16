@@ -42,35 +42,38 @@ document.addEventListener(
   "DOMContentLoaded",
   function platformDetectionForDownload() {
     platform = navigator.platform;
-    button = document.getElementById("dl-main-button");
+    buttonMain = document.getElementById("dl-button-main");
     switch (platform) {
       case "Win32":
-        button.href = "";
+        buttonMain.href = "";
         if (process.env.NODE_ENV !== "production") {
           console.log("Detected platform: Windows");
         }
-        button.innerHTML += "Download for Windows";
+        buttonMain.innerHTML += "Download for Windows";
+        document.getElementById("dl-button-sub-win").remove();
         break;
       case "MacIntel":
-        button.href = "";
+        buttonMain.href = "";
         if (process.env.NODE_ENV !== "production") {
           console.log("Detected platform: MacOS");
         }
-        button.innerHTML += "Download for Mac";
+        buttonMain.innerHTML += "Download for Mac";
+        document.getElementById("dl-button-sub-mac").remove();
         break;
       case "Linux x86_64":
-        button.href = "";
+        buttonMain.href = "";
         if (process.env.NODE_ENV !== "production") {
           console.log("Detected platform: Linux");
         }
-        button.innerHTML += "Download for Linux";
+        buttonMain.innerHTML += "Download for Linux";
+        document.getElementById("dl-button-sub-linux").remove();
         break;
       default:
-        button.href = "";
+        buttonMain.href = "";
         if (process.env.NODE_ENV !== "production") {
           console.log("Platform not detected");
         }
-        button.innerHTML = "Platform not detected";
+        buttonMain.innerHTML = "Platform not detected";
         break;
     }
   }

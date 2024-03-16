@@ -99,7 +99,7 @@
 
 .first-view {
   background-image: url("../img/bg1.png?as=webp&height=1080&quality=60");
-  
+
   .content {
     @include flexbox(column, center, center, 20px);
     height: calc(100vh - 48px);
@@ -152,21 +152,54 @@
     font-size: 30px;
   }
 
-  .dl-buttons {
+  .dl-section {
     @include flexbox(column, $gap: 10px);
+    #dl-button-main {
+      @include flexbox($gap: 4px);
+      font-size: 30px;
+      border: solid 2px white;
+      border-radius: 10px;
+      padding: 10px 17px;
+    }
+    span {
+      font-size: 23px;
+    }
+    button {
+      font-size: 20px;
+    }
   }
-  #dl-main-button {
-    @include flexbox($gap: 4px);
+}
+
+.fourth-view .content {
+  @include grid(
+    repeat(4, 1fr),
+    calc(calc(100vh - 148px) / 3) auto calc(calc(100vh - 148px) / 3),
+    center,
+    center,
+    40px
+  );
+  margin-top: 100px;
+
+  p {
+    grid-row: 1 / 2;
+    grid-column: 1 / 5;
     font-size: 30px;
-    border: solid 2px white;
-    border-radius: 10px;
-    padding: 10px 17px;
+    align-self: end;
   }
-  #dl-other-toggle {
-    @include flexbox($align-items: flex-end, $gap: 4px);
-    font-size: 23px;
-    img {
-      height: 1em;
+  img {
+    grid-row: 2 / 3;
+    max-height: auto;
+    border-radius: 25%;
+  }
+  div {
+    grid-row: 3 / 4;
+    align-self: baseline;
+    @include flexbox(column, center, center, 20px);
+    .name {
+      font-size: 27px;
+    }
+    .bio {
+      font-size: 25px;
     }
   }
 }
