@@ -2,7 +2,10 @@
 
 This is the website for Lands of Azerith, a game developed by the Stonks Industries.
 
-## Installation
+To avoid any installation, you can open the [website](https://stonksindustries.github.io/Azerith_Website/dist) directly.
+You can also open `dist/index.html` to see the website, after cloning the repository.
+
+## Installation for development purposes
 
 Use the package manager [npm](https://www.npmjs.com/) to install the required packages.
 
@@ -16,16 +19,10 @@ npm install
 npm run dev
 ```
 
-- Build for production
+- Build for production (create the dist/ folder)
 
 ```bash
 npm run build
-```
-
-- Start production server
-
-```bash
-npm run start
 ```
 
 ## GitHub Pages
