@@ -4,6 +4,19 @@
 <!-- TODO Download defense reports -->
 <!-- TODO Nav button -->
 
+<!-- Une présentation du projet (l’historique, les membres, la chronologie de réalisation, les problèmes rencontrés, les solutions envisagées), -->
+<!-- Les liens sur les sites (des membres, des logiciels, images, sons, bibliothèques, applets et autres éléments que vous auriez pu utiliser), -->
+<!-- Un téléchargement du rapport, du projet et d’une version allégée de celui-ci (sans les introductions, séquences avi et toutes choses inutiles à l’exécution du projet). -->
+
+<!-- TODO Historique / Chronologie du projet -->
+<!-- Technologies utilisés
+    Grid horizontale tel que:
+    - Jeu : Godot, C#, Blender, Gimp, Audacity
+    - Site web : HTML, SCSS, JS, Parcel, Github Pages, VSCode
+    - Rapport : Latex, VSCode, miktex
+    - Gestion de projet : Discord, Github Projet, Google Drive
+-->
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,13 +36,13 @@
       </span>
       <ul class="nav-ul">
         <li>
-          <button>À-propos</button>
+          <a href="#about">À-propos</a>
         </li>
         <li>
-          <button>Téléchargement</button>
+          <a href="#download">Téléchargement</a>
         </li>
         <li>
-          <button>Contact</button>
+          <a href="#history">Histoire</a>
         </li>
       </ul>
     </div>
@@ -39,22 +52,18 @@
         <h1>Welcome to the Lands of Azerith</h1>
         <ul class="nav-ul">
           <li>
-            <button>À-propos</button>
+            <a href="#about">À-propos</a>
           </li>
           <li>
-            <button>Téléchargement</button>
+            <a href="#download">Téléchargement</a>
           </li>
           <li>
-            <button>Contact</button>
+            <a href="#history">Histoire</a>
           </li>
         </ul>
       </div>
-
-      <!-- <button id="scroll-down-button"> -->
-      <!-- <img src="svg/down_arrow.svg" alt="Go Down" /> -->
-      <!-- </button> -->
     </div>
-    <div class="view second-view">
+    <div class="view second-view" id="about">
       <div class="content">
         <img src="img/perso.png" alt="game character" />
         <div>
@@ -72,7 +81,7 @@
         <a href="">Vidéo de Gameplay</a>
       </div>
     </div>
-    <div class="view third-view" id="Downloads">
+    <div class="view third-view" id="download">
       <div class="content">
         <img class="left" src="svg/win.svg" />
         <img class="center" src="svg/linux.svg" />
@@ -93,11 +102,8 @@
           <a href="">nightly</a>
         </div>
       </div>
-      <!-- <button id="scroll-down-button"> -->
-      <!-- <img src="svg/down_arrow.svg" alt="Go Down" /> -->
-      <!-- </button> -->
     </div>
-    <div class="view fourth-view">
+    <div class="view fourth-view" id="history">
       <div class="content">
         <p>L'équipe de développement de Lands of Azerith :</p>
         <img src="img/alexandre.webp" alt="Photo de Alexandre" />
@@ -122,16 +128,81 @@
         </div>
       </div>
     </div>
-    <div class="view fifth-view">
+    <div class="view fifth-view" id="footer">
       <div class="content">
-        <div class="contact-view">
-          <p>Vous pouvez nous contacter via <a href="">Email</a>.</p>
-          <p>Vous pouvez colaborez sur <a href="">Github</a>.</p>
-          <p>Vous pouvez colaborez sur <a href="">Github</a>.</p>
+        <span class="trait"></span>
+        <img class="time1" src="svg/rocket.svg" />
+        <img class="time2" src="svg/article.svg" />
+        <img class="time3" src="svg/article.svg" />
+        <div class="time1">
+          <span>Octobre 2023</span>
+          <h2>Lancement du projet</h2>
+          <p>
+            Création de la Stonks Industries, une entreprise de développement de
+            jeux vidéo.
+          </p>
+        </div>
+        <div class="time2">
+          <span>Décembre 2023</span>
+          <h2>Cahier des charges</h2>
+          <span>
+            Rédaction du cahier des charges du jeu Lands of Azerith.
+          </span>
+          <span>
+            <a
+              href="https://stonksindustries.github.io/Book_of_Specifications/Book_of_Specifications.pdf"
+            >
+              <img src="svg/dl.svg" />Téléchargement du cahier des charges.</a
+            >
+          </span>
+        </div>
+        <div class="time3">
+          <span>Mars 2023</span>
+          <h2>Soutenance technique #1</h2>
+          <span> Présentation du projet de jeu et de son avancement. </span>
+          <a
+            href="https://stonksindustries.github.io/First_Defense_Report/First_Defense_Report.pdf"
+            ><img src="svg/dl.svg" />Téléchargement du rapport de soutenance</a
+          >
         </div>
       </div>
     </div>
 
+    <div class="view footer">
+      <div class="content">
+        <div class="credits">
+          <h2>Lands of Azerith</h2>
+          <p>© 2024 Stonks Industries</p>
+        </div>
+        <div class="socials">
+          <a
+            href="https://github.com/StonksIndustries/Azerith_Website"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="svg/github.svg" alt="Github" />
+            Dépot Github du site web
+          </a>
+          <a
+            href="https://github.com/StonksIndustries/Lands_of_Azerith"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="svg/github.svg" alt="Github" />
+            Dépot Github du jeu
+          </a>
+
+          <a
+            href="mailto:martin.pasquier@epita.fr"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="svg/mail.svg" />
+            Contactez-nous par mail
+          </a>
+        </div>
+      </div>
+    </div>
     <!--TODO Add blur to image and remove it from code-->
     <div class="first-view-blur"></div>
   </body>

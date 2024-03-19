@@ -4,7 +4,7 @@
   "description": "Lands of Azerith Website",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "rm -rf .parcel-cache dist && parcel build src/index.html && node inline.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +13,7 @@
     "jquery": "^3.7.1",
     "parcel": "^2.10.3",
     "prettier": "^3.1.1",
-    "sharp": "^0.31.3"
+    "sharp": "^0.31.3",
+    "web-resource-inliner": "^6.0.1"
   }
 }

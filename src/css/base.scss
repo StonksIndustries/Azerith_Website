@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap");
 
 $font-serif: "Hina Mincho", serif;
+$normal-font-size: 23px;
 
 @mixin flexbox(
   $direction: row,
@@ -39,6 +40,7 @@ $font-serif: "Hina Mincho", serif;
   z-index: 1;
   font-family: $font-serif;
   color: white;
+  font-size: $normal-font-size;
 }
 
 body {
