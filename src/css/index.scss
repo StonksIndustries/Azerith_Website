@@ -1,5 +1,26 @@
 @import "base";
 
+// TODO: Remove this before pushing
+// .fifth-view,
+.nav {
+  display: none !important;
+}
+
+.view {
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  margin: 0;
+}
+
+.content {
+  margin: 15vh 0;
+  place-items: center;
+  max-width: 80vw;
+}
+
+// Navigation bar
 .nav {
   @include flexbox($justify-content: space-between);
   @include size(100%, 100px);
@@ -46,6 +67,10 @@
   padding: 0;
   list-style: none;
 
+  @media screen and (max-width: 1200px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
   a:after {
     content: "";
     display: block;
@@ -63,29 +88,7 @@
   }
 }
 
-.first-view-blur {
-  @include size(100%, 100%);
-  position: absolute;
-  top: 0;
-  z-index: 0;
-  opacity: 0.9;
-  background: linear-gradient(180deg, #000 -30%, rgba(0, 0, 0, 0) 100%);
-}
-
-.view {
-  display: flex;
-  place-items: center;
-  justify-content: center;
-  min-height: 70vh;
-  margin: 0;
-}
-
-.content {
-  margin: 15vh 0;
-  place-items: center;
-  max-width: 80vw;
-}
-
+// Title view
 .first-view {
   height: 100vh;
   background-size: cover;
@@ -106,6 +109,16 @@
       font-weight: 400;
       margin: 0;
     }
+    @media screen and (max-width: 1200px) {
+      h1 {
+        text-align: center;
+      }
+    }
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 48px;
+      }
+    }
 
     ul {
       gap: 80px;
@@ -114,93 +127,179 @@
         font-size: 42px;
       }
     }
+    @media screen and (max-width: 1200px) and (min-width: 600px) {
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+    }
+    @media screen and (max-width: 600px) {
+      ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        a {
+          font-size: 32px;
+        }
+        gap: 20px;
+      }
+    }
   }
+}
+.first-view-blur {
+  @include size(100%, 100%);
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  opacity: 0.9;
+  background: linear-gradient(180deg, #000 -30%, rgba(0, 0, 0, 0) 100%);
 }
 
 // Presentation view
 .second-view .content {
   display: grid;
-  gap: 0 40px;
-
+  gap: 40px 40px;
+  grid-template-columns: 1fr 1fr;
   img {
-    grid-row: 2 / 3;
     max-width: 40vh;
   }
-
   div {
-    grid-row: 2 / 3;
-    @include flexbox(column, left, center, 15px);
+    @include flexbox(column, left, center, 30px);
+    font-size: 25px;
     p {
       margin: 0;
-      font-size: 25px;
     }
   }
-  a {
-    align-self: start;
-    grid-row: 3 / 4;
-    grid-column: 2 / 3;
-    font-size: 25px;
+  @media screen and (max-width: 1050px) {
+    grid-template-columns: 1fr;
   }
+}
+#video-splash-canva {
+  @include flexbox(column, center, center, 20px);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  > div {
+    @include flexbox(column, center, center, 20px);
+    font-size: 25px;
+    width: 80vw;
+    button {
+      padding: 5px;
+      display: flex;
+      border-radius: 30%;
+      background-color: white;
+      cursor: pointer;
+      align-self: flex-end;
+    }
+    iframe {
+      width: 80vw;
+      height: calc(80vw * 9 / 16);
+    }
+  }
+}
+#video-splash-canva.show {
+  display: flex;
 }
 
 // Download view
 .third-view .content {
   display: grid;
   gap: 40px 15vw;
+  grid-template-columns: repeat(3, 1fr);
 
-  .left {
-    grid-column: 1 / 2;
-  }
-  .center {
-    grid-column: 2 / 3;
-  }
-  .right {
-    grid-column: 3 / 4;
-  }
-  img {
-    grid-row: 1 / 2;
-    width: 8vw;
-    align-self: end;
-  }
-  span {
-    grid-row: 2 / 3;
-    align-items: end;
-    font-size: 30px;
-  }
   div {
     @include flexbox(column, $gap: 5px);
-    grid-row: 3 / 4;
     font-size: 25px;
+    img {
+      width: 64px;
+      margin: 20px auto;
+    }
+    span {
+      font-size: 30px;
+    }
+  }
+
+  div.link-right {
+    gap: 5px;
+    display: none;
+    font-size: 25px;
+  }
+
+  @media screen and (max-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 20px;
+    div.platform {
+      grid-column: 1 / 2;
+    }
+    div.link-below {
+      display: none;
+    }
+    div.link-right {
+      display: flex;
+      grid-column: 2 / 3;
+    }
   }
 }
 
 // Team view
 .fourth-view .content {
-  @include flexbox(column, $gap: 100px);
-
+  width: 80vw;
   p {
+    text-align: center;
     font-size: 34px;
-    align-self: end;
+    margin-bottom: 80px;
   }
 
   .team-grid {
     display: grid;
-    gap: 40px 10vw;
-    grid-template-columns: repeat(auto-fill, 1fr);
+    gap: 40px 40px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
     div {
-      // grid-row: 3 / 4;
-      align-self: baseline;
       @include flexbox(column, center, center, 20px);
       img {
-    max-height: auto;
-    border-radius: 25%;
-  }
-    .name {
-      font-size: 27px;
+        border-radius: 25%;
+        height: 128px; // Loading property
+        width: 128px; // Loading property
+        background-color: rgb(48, 48, 48); // Loading property
+      }
+      @media screen and (max-width: 800px) {
+        img {
+          height: 96px; // Loading property
+          width: 96px; // Loading property
+        }
+      }
+      .name {
+        font-size: 27px;
+      }
+      .bio {
+        font-size: 25px;
+      }
     }
-    .bio {
+    div.link-right {
+      gap: 10px;
+      display: none;
       font-size: 25px;
+    }
+
+    @media screen and (max-width: 800px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 0;
+      div.platform {
+        grid-column: 1 / 2;
+      }
+      div.link-below {
+        display: none;
+      }
+      div.link-right {
+        display: flex;
+        grid-column: 2 / 3;
       }
     }
   }
@@ -265,12 +364,15 @@
 }
 
 .footer {
+  @include flexbox(column, center, center, 20px);
   background-color: rgb(64, 64, 64);
   border-radius: 30px 30px 0 0;
-  min-height: unset;
-  height: 30vh;
-  .content {
-    @include flexbox(row, center, center, 10vh);
+  padding: 50px 0;
+  > div {
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
     .socials {
       @include flexbox(column, center, center, 20px);
       a {
@@ -279,6 +381,13 @@
           height: 0.8em;
           translate: 0px 2px;
         }
+      }
+    }
+    @media screen and (max-width: 800px) {
+      grid-template-columns: 1fr;
+      text-align: center;
+      .credits {
+        align-items: center;
       }
     }
   }

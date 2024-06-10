@@ -42,7 +42,10 @@
           <a href="#download">Téléchargement</a>
         </li>
         <li>
-          <a href="#history">Histoire</a>
+          <a href="#team">L'équipe</a>
+        </li>
+        <li>
+          <a href="#history">Historique</a>
         </li>
       </ul>
     </div>
@@ -58,7 +61,10 @@
             <a href="#download">Téléchargement</a>
           </li>
           <li>
-            <a href="#history">Histoire</a>
+            <a href="#team">L'équipe</a>
+          </li>
+          <li>
+            <a href="#history">Historique</a>
           </li>
         </ul>
       </div>
@@ -77,63 +83,160 @@
             monde où de nombreuses créatures malveillantes errent sans but dans
             la nuit.
           </p>
+          <a id="video-splash-button" href="#About">🎥 Vidéo de Gameplay</a>
         </div>
-        <a href="">Vidéo de Gameplay</a>
       </div>
     </div>
     <div class="view third-view" id="download">
       <div class="content">
-        <img class="left" src="svg/win.svg" />
-        <img class="center" src="svg/linux.svg" />
-        <img class="right" src="svg/apple.svg" />
-        <span class="left">Windows</span>
-        <span class="center">AppImage</span>
-        <span class="right">MacOS</span>
-        <div class="left">
-          <a href="https://github.com/StonksIndustries/Lands_of_Azerith/releases/tag/stable">stable</a>
-          <a href="https://github.com/StonksIndustries/Lands_of_Azerith/releases/tag/nightly">nightly</a>
+        <div class="platform">
+          <span>Windows</span>
+          <img src="svg/win.svg" />
+          <div class="link-below">
+            <a
+              href="https://github.com/StonksIndustries/Lands_of_Azerith/releases/tag/stable"
+              >stable</a
+            >
+            <a
+              href="https://github.com/StonksIndustries/Lands_of_Azerith/releases/tag/nightly"
+              >nightly</a
+            >
+          </div>
         </div>
-        <div class="center">
-          <a href="https://github.com/StonksIndustries/Lands_of_Azerith/releases/tag/stable">stable</a>
-          <a href="https://github.com/StonksIndustries/Lands_of_Azerith/releases/tag/nightly">nightly</a>
+        <div class="link-right">
+          <a
+            href="https://github.com/StonksIndustries/Lands_of_Azerith/releases/tag/stable"
+            >stable</a
+          >
+          <a
+            href="https://github.com/StonksIndustries/Lands_of_Azerith/releases/tag/nightly"
+            >nightly</a
+          >
         </div>
-        <div class="right">
-          <a href="https://github.com/StonksIndustries/Lands_of_Azerith/releases/tag/stable">stable</a>
-          <a href="https://github.com/StonksIndustries/Lands_of_Azerith/releases/tag/nightly">nightly</a>
+        <div class="platform">
+          <span>AppImage</span>
+          <img src="svg/linux.svg" />
+          <div class="link-below">
+            <a
+              href="https://github.com/StonksIndustries/Lands_of_Azerith/releases/tag/stable"
+              >stable</a
+            >
+            <a
+              href="https://github.com/StonksIndustries/Lands_of_Azerith/releases/tag/nightly"
+              >nightly</a
+            >
+          </div>
+        </div>
+        <div class="link-right">
+          <a
+            href="https://github.com/StonksIndustries/Lands_of_Azerith/releases/tag/stable"
+            >stable</a
+          >
+          <a
+            href="https://github.com/StonksIndustries/Lands_of_Azerith/releases/tag/nightly"
+            >nightly</a
+          >
+        </div>
+        <div class="platform">
+          <span>MacOS</span>
+          <img src="svg/apple.svg" />
+          <div class="link-below">
+            <a
+              href="https://github.com/StonksIndustries/Lands_of_Azerith/releases/tag/stable"
+              >stable</a
+            >
+            <a
+              href="https://github.com/StonksIndustries/Lands_of_Azerith/releases/tag/nightly"
+              >nightly</a
+            >
+          </div>
+        </div>
+
+        <div class="link-right">
+          <a
+            href="https://github.com/StonksIndustries/Lands_of_Azerith/releases/tag/stable"
+            >stable</a
+          >
+          <a
+            href="https://github.com/StonksIndustries/Lands_of_Azerith/releases/tag/nightly"
+            >nightly</a
+          >
         </div>
       </div>
     </div>
-    <div class="view fourth-view" id="history">
+    <div class="view fourth-view" id="team">
       <div class="content">
         <p>L'équipe de développement de Lands of Azerith :</p>
-        <img src="img/ayemane.webp" alt="Photo de Ayemane" />
-        <div>
-          <span class="name">Ayemane</span>
-          <span class="bio">Designer</span>
-        </div>
-        <img src="img/alexandre.webp" alt="Photo de Alexandre" />
-        <div>
-          <span class="name">Alexandre</span>
-          <span class="bio">Scénariste, Auteur</span>
-        </div>
-        <img src="img/louise.webp" alt="Photo de Louise" />
-        <div>
-          <span class="name">Louise</span>
-          <span class="bio">Scénariste, Auteur</span>
-        </div>
-        <img src="img/martin.webp" alt="Photo de Martin" />
-        <div>
-          <span class="name">Martin</span>
-          <span class="bio">Développeur Web</span>
-        </div>
-        <img src="img/michael.webp" alt="Photo de Michael" />
-        <div>
-          <span class="name">Michael</span>
-          <span class="bio">Développeur C#</span>
+        <div class="team-grid">
+          <div>
+            <img src="img/ayemane.webp" alt="Photo de Ayemane" />
+            <div class="link-below">
+              <!-- Hidden on small display -->
+              <span class="name">Ayemane</span>
+              <span class="bio">Designer</span>
+            </div>
+          </div>
+          <div class="link-right">
+            <!-- Hidden on large display -->
+            <span class="name">Ayemane</span>
+            <span class="bio">Designer</span>
+          </div>
+          <div>
+            <img src="img/alexandre.webp" alt="Photo de Alexandre" />
+            <div class="link-below">
+              <!-- Hidden on small display -->
+              <span class="name">Alexandre</span>
+              <span class="bio">Scénariste, Auteur</span>
+            </div>
+          </div>
+          <div class="link-right">
+            <!-- Hidden on large display -->
+            <span class="name">Alexandre</span>
+            <span class="bio">Scénariste, Auteur</span>
+          </div>
+          <div>
+            <img src="img/louise.webp" alt="Photo de Louise" />
+            <div class="link-below">
+              <!-- Hidden on small display -->
+              <span class="name">Louise</span>
+              <span class="bio">Scénariste, Auteur</span>
+            </div>
+          </div>
+          <div class="link-right">
+            <!-- Hidden on large display -->
+            <span class="name">Louise</span>
+            <span class="bio">Scénariste, Auteur</span>
+          </div>
+          <div>
+            <img src="img/martin.webp" alt="Photo de Martin" />
+            <div class="link-below">
+              <!-- Hidden on small display -->
+              <span class="name">Martin</span>
+              <span class="bio">Développeur Web</span>
+            </div>
+          </div>
+          <div class="link-right">
+            <!-- Hidden on large display -->
+            <span class="name">Martin</span>
+            <span class="bio">Développeur Web</span>
+          </div>
+          <div>
+            <img src="img/michael.webp" alt="Photo de Michael" />
+            <div class="link-below">
+              <!-- Hidden on small display -->
+              <span class="name">Michael</span>
+              <span class="bio">Développeur C#</span>
+            </div>
+          </div>
+          <div class="link-right">
+            <!-- Hidden on large display -->
+            <span class="name">Michael</span>
+            <span class="bio">Développeur C#</span>
+          </div>
         </div>
       </div>
     </div>
-    <div class="view fifth-view" id="footer">
+    <div class="view fifth-view" id="history">
       <div class="content">
         <span class="trait"></span>
         <img class="time1" src="svg/rocket.svg" />
@@ -173,8 +276,8 @@
       </div>
     </div>
 
-    <div class="view footer">
-      <div class="content">
+    <div class="footer">
+      <div class="">
         <div class="credits">
           <h2>Lands of Azerith</h2>
           <p>© 2024 Stonks Industries</p>
@@ -210,5 +313,17 @@
     </div>
     <!--TODO Add blur to image and remove it from code-->
     <div class="first-view-blur"></div>
+
+    <div id="video-splash-canva">
+      <div>
+        <button><img src="svg/close.svg" alt="Close" /></button>
+        <iframe
+          src="https://www.youtube.com/embed/DOtM1mrWjUo"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
   </body>
 </html>
