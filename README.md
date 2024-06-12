@@ -5,7 +5,8 @@ Git commits:
 https://gitmoji.dev/
 
 TODO: Add links on team
-TODO: Update the history
+TODO: Re-Add the nav bar
+TODO: Add missing link in nav bar
 -->
 
 This is the website for Lands of Azerith, a game developed by the Stonks Industries.
