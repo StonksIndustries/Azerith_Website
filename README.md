@@ -1,5 +1,13 @@
 # Azerith_Website
 
+<!--
+Git commits:
+https://gitmoji.dev/
+
+TODO: Add links on team
+TODO: Responsive on last part + update it
+-->
+
 This is the website for Lands of Azerith, a game developed by the Stonks Industries.
 
 To avoid any installation, you can open the [website](https://stonksindustries.github.io/Azerith_Website/dist) directly.
