@@ -2,10 +2,6 @@
 
 // TODO: Remove this before pushing
 // .fifth-view,
-.nav {
-  display: none !important;
-}
-
 .view {
   display: flex;
   place-items: center;
@@ -60,6 +56,10 @@
   }
 
   backdrop-filter: blur(10px);
+  
+  @media screen and (max-width: 1100px) {
+    display: none;
+  }
 }
 
 .nav-ul {
@@ -67,10 +67,7 @@
   padding: 0;
   list-style: none;
 
-  @media screen and (max-width: 1200px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
+  
   a:after {
     content: "";
     display: block;
@@ -289,8 +286,14 @@
     }
 
     @media screen and (max-width: 800px) {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 2fr;
       gap: 40px 0;
+      div {
+        img {
+          height: 64px;
+          width: 64px;
+        }
+      }
       div.platform {
         grid-column: 1 / 2;
       }
@@ -438,12 +441,17 @@
   border-radius: 30px 30px 0 0;
   padding: 50px 0;
   > div {
-    width: 80vw;
+    width: 70vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
-
+    .credits p {
+      @include flexbox(row, center, unset, 10px);
+      img {
+        height: 4em;
+      }
+    }
     .socials {
-      @include flexbox(column, center, center, 20px);
+      @include flexbox(column, flex-end, center, 20px);
       a {
         @include flexbox(row, baseline, center, 5px);
         img {
@@ -456,11 +464,15 @@
       grid-template-columns: 1fr;
       gap: 20px;
       text-align: center;
+      .credits p {
+        @include flexbox(row, center, center, 10px);
+      }
       .credits h2,
       p {
         margin: 7px;
       }
       .socials {
+        @include flexbox(column, center, center, 20px);
         gap: 0;
         a {
           margin: 7px;
